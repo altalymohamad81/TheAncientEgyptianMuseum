@@ -1,0 +1,131 @@
+body {
+  font-weight: bold;
+  text-align: justify;
+  margin-top: 0%;
+  margin-bottom: 0;
+  background: url("picture/51.jpg") no-repeat fixed center;
+}
+.container ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  font-size:24px;               
+  font-style: normal;
+  align-content: center;
+
+}
+.container li{position:relative;}
+.container a{
+  display:inline-block;
+  padding:3px 12px;
+  height:24px;
+  line-height:24px;
+  text-decoration:none;
+  white-space:nowrap;
+  background:#fff;
+  color:#000000;
+  font color: #000000;
+}
+.container a:hover{
+  background:#ff8800;
+  color:#fff;
+}
+.menu{
+  position:relative;
+  *zoom:1;
+  align-content: center;
+  font color:#fff	;
+}
+.menu:after, .menu:before{
+  content:'';
+  display:table;
+  line-height:0;
+}
+.menu:after{clear:both;}
+.menu > li{
+  float:right;
+  margin-right:4px;
+  border:1px solid #fafafa;
+}
+.menu > li:last-child{margin-right:0;}
+.sub-menu, .sub-sub-menu{
+  border:1px solid #D5DCEE;
+  border-top:0 none;
+}
+.sub-menu li{border-top:1px solid #D5DCEE;}
+.sub-menu, .sub-sub-menu{
+  position:absolute;
+  right:-999em;
+}
+.sub-menu{top:30px;}
+.sub-sub-menu{top:-1px;}
+.menu > li:hover .sub-menu{right:0;}
+.sub-menu > li:hover .sub-sub-menu{right:100%;}
+.container .arrow:after{
+  /*content:'\00BB';*/
+  position:absolute;
+  right: 1px;
+  top:0;
+  height:30px;
+  line-height:30px;
+}
+.container .arrow:hover{color:#fff;}
+.container .arrow > a{padding-right:12px;}
+
+.titlediv{
+  display:inline-block;
+  padding:3px 12px;
+  height:24px;
+  text-decoration:relative;
+  white-space:wrap;
+  color:#000000;
+  font-size: 22px;
+  font-style: normal;
+  text-align: center;
+
+
+}
+
+.topim{
+text-align: center;
+
+}
+.titlediv1{
+font-size: xx-large;
+font-style: normal;
+text-align: center;
+color:#A52A2A;
+background-color: #FDF5E6;
+}
+
+.marquee{
+  align-items: center;
+  text-align: center;
+}
+.llink{
+  font-size: x-large;
+font-style: normal;
+text-align: center;
+color: rgb(8, 8, 66);
+order:unset;
+}
+.ltext{
+  font-size: x-large;
+  align-self: start;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.title{
+  font-size: xx-large;
+  font color: border-bottom: color: blue;
+}
+div{
+  font-size: 30px;
+  align-items: stretch;
+}
+table{
+  align-content: center;
+  padding: 10px;
+  border-spacing: 10px;
+  direction: rtl;
+  width: fit-content;
+}

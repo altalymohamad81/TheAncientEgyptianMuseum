@@ -1,0 +1,140 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="rtl">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+<title>آثارنا ... تاريخنا</title>
+
+
+<style type="text/css">
+<!--
+-->
+</style>
+</head>
+<body style="background-image: url('picture/71.jpg')"><script src="java.js"></script>
+
+
+<iframe name="Iframe1" height="100" width="1250" frameborder="0" marginheight="0" scrolling="no" src="topframe.html">
+				Your browser does not support inline frames or is currently configured not to display inline frames.
+			</iframe>
+<hr />
+           
+<br/>
+    <div class="auto-style2">
+      <script>
+      function passtest()
+      {
+          var user=window.document.frmlogin.txtname.value;
+      var pass=window.document.frmlogin.txtpassword.value;
+      if (user=="Fatma" && pass=="1234")
+      {
+      document.location="home.html";
+      }
+      else
+      {
+      alert("من فضلك ادخل كلمة المرور بطريقة صحيجة");
+      }
+      }
+      </script>
+         
+          <br>
+          <center>
+      <form name="frmlogin">
+        <font size="5">
+          <table style="background: rgb(58, 4, 31); font-size: x-large; font-style: bold; color: rgb(255, 255, 255);"  border="1">
+            <tr>
+              <td colspan="3"><div align="center"><font size="5">ادخل  اسم المستخدم وكلمة المرور </font></div></td>
+            </tr>
+            <tr>
+              <td>
+                الاسم:
+                <input type="text" name="txtname">              </td>
+              <td>
+                كلمة المرور:
+                <input type="password" name="txtpassword">              </td>
+              <td>
+                <input style="font-size: x-large;" type="button" value="ادخل" onclick="passtest()">              </td>
+            </tr>
+          </table>
+         
+    
+      
+    </font>
+      </form>
+      </center>
+      <br/>
+      <br/><br/><br/>
+      <!--
+      <marquee id="scroller" scrollamount="3" direction="up" width="1100" hieght="800" >
+        <center>
+    <font color="black" size="5"> إعداد الطالبة:  <br>فاطمة محمد مصطفى الطلي <br>الصف السادس الإبتدائي <br>إدارة المحمودية التعليمية
+  <br>محافظة البحيرة <br>مدرسة بنات العطف الإبتدائية
+
+</font> </center></marquee>
+-->
+ 
+  <center >
+  <table >
+  <tr>
+  
+  <td>
+    <center>
+
+
+      <iframe src="slide 2/slide2012.html" style="height: 350px; width: 450px; align-items: center; border: 10px solid #FFD700 ; "  title="iframe example"></iframe>
+
+		</center>
+  </td>
+  </tr></table>
+
+  </center>
+  <br/><br/>
+  <body  leftmargin="100" onload="textticker()" rightmargin="200" topmargin="2" bottommargin="0" marginwidth="20" marginheight="20">
+  <script>
+ 
+  var max=0;
+  function textlist()
+  {
+  max=textlist.arguments.length;
+  for (i=0; i<max; i++)
+  this[i]=textlist.arguments[i];
+  }
+  tl = new textlist
+  (
+    " إعداد الطالبة : فاطمة محمد مصطفى الطلى ",
+    "الصف السادس الإبتدائى",
+    " إدارة المحمودية التعليمية",
+    "محافظة البحيرة ",
+    " مدرسة بنات العطف الإبتدائية ",
+    
+  
+    
+    );
+  var x=0; pos=0;
+  var l=tl[0].length ;
+  function textticker()
+  {
+  
+  tickform.innerHTML = tl[x].substring(0,pos);
+  if(pos++==l) { pos=0; setTimeout("textticker()",2000); x++;
+  if(x==max) x=0; l=tl[x].length; } else
+  setTimeout("textticker()",60);
+  }
+  
+  // -->
+  </script>
+  <b>
+  <strong>
+  </strong></b><center><b><strong>
+  <div id="tickform" style="COLOR: #6b0c6eda; FONT-FAMILY: Arial; FONT-SIZE: 24px">    </div></strong></b>
+  
+  </center>
+
+  </body>
+
+
+
+
+
+
+</html>

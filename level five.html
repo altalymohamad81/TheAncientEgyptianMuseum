@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+	<meta content="ar-eg" http-equiv="Content-Language">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>المتحف المصري القديم </title>
+	<style type="text/css">
+.img {
+	float: none;
+	overflow: auto;
+}
+.newStyle1 {
+	color: #412CA3;
+}
+.auto-style1 {
+	text-align: center;
+}
+    </style>
+<link rel="stylesheet" href="styledrop.css">
+
+
+</head>
+<body style="background-image: url('picture/17.jpg')"><script src="java.js"></script>
+
+
+<div class="auto-style1">
+  <table width="1200" height="90" dir="ltr" align="center" border="0"><tr><td>
+    <script>
+    
+    var slideurl=new Array()
+    var slidelink=new Array()
+    var slidetarget=new Array()
+    
+    
+    // EDIT-ZONE STARTS HERE  // BY : WWW.elahmad.COM
+    
+    // Set the URLs of your slides (images) // مسار الصور
+    slideurl[0]="picture/22.jpg"
+    slideurl[1]="picture/23.jpg"
+    
+        // Set the font for the comments
+    var slidefont="TAHOMA" // نوع الخط
+    
+    // Set the fontcolor for the comments
+    var slidefontcolor="black" // لون الخط
+    
+    // Set the fontsize for the comments (HTML-values ranging form 1 - 6)
+    var slidefontsize=2 // حجم الخط
+    
+    // Set the width of the pictures (pixels)
+    var slidewidth=1200 // عرض الصورة بالبكسل
+    
+    // Set the height of the pictures (pixels)
+    var slideheight=90 // طول الصورة بالبكسل
+    
+    // Set the pause between the pictures (seconds)
+    var pause=5 // المدة الفاصلة بين كل صورة
+    
+    // EDIT-ZONE ENDS HERE
+    
+    var preloadedimages=new Array()
+    for (i=0;i<slideurl.length;i++){
+        preloadedimages[i]=new Image()
+        preloadedimages[i].src=slideurl[i]
+    }
+    
+    var ns4=document.layers?1:0
+    var ns6=document.getElementById&&!document.all?1:0 
+    var ie=document.all?1:0
+    
+    var imgpreload=new Array()
+    for (i=0;i<=slideurl.length-1;i++) {
+        imgpreload[i]=new Image()
+        imgpreload[i].src=slideurl[i]
+    }
+    
+    var pos_left=0
+    var pos_top=0
+    var speed=20
+    var step=10
+    var i_loop=0
+    var i_image1=0
+    var i_image2=1
+    var i_space=""
+    var all_space=""
+    var max_space=20
+    var content=""
+    var i_slide=0
+    pause*=1000
+    
+    function stretchimage() {
+        if (i_loop<=slidewidth) {
+            if (ie) {
+                imgcontainer1.innerHTML="<a href='"+slidelink[i_image1]+"' target='"+slidetarget[i_image1]+"'><img width='"+i_loop+"' height='"+slideheight+"' src='"+slideurl[i_image1]+"' border='0'></a>"
+                document.all.imgcontainer2.style.posLeft=document.all.imgcontainer1.style.posLeft+i_loop
+                
+                imgcontainer2.innerHTML="<a href='"+slidelink[i_image2]+"' target='"+slidetarget[i_image2]+"'><img width='"+(slidewidth-i_loop)+"' height='"+slideheight+"' src='"+slideurl[i_image2]+"' border='0'></a>"
+            }
+            if (ns6) {
+                document.getElementById('imgcontainer1').innerHTML="<a href='"+slidelink[i_image1]+"' target='"+slidetarget[i_image1]+"'><img width='"+i_loop+"' height='"+slideheight+"' src='"+slideurl[i_image1]+"' border='0'></a>"
+                document.getElementById('imgcontainer2').style.left=parseInt(document.getElementById('imgcontainer1').style.left)+i_loop
+                
+                document.getElementById('imgcontainer2').innerHTML="<a href='"+slidelink[i_image2]+"' target='"+slidetarget[i_image2]+"'><img width='"+(slidewidth-i_loop)+"' height='"+slideheight+"' src='"+slideurl[i_image2]+"' border='0'></a>"
+            }
+            i_loop=i_loop+step
+            var timer=setTimeout("stretchimage()",speed)
+          }
+        else {
+            clearTimeout(timer)
+            var imgcontent="<a href='"+slidelink[i_image1]+"' target='"+slidetarget[i_image1]+"'><img width='"+i_loop+"' height='"+slideheight+"' src='"+slideurl[i_image1]+"' border='0'></a><br><center><font face='"+slidefont+"' size="+slidefontsize+" color='"+slidefontcolor+"'>"+"</font></center>"
+            if (ie) {
+                imgcontainer1.innerHTML=imgcontent
+                document.all.imgcontainer2.style.posLeft=document.all.imgcontainer1.style.posLeft+i_loop	
+                imgcontainer2.innerHTML=""
+            }
+            if (ns6) {
+                document.getElementById('imgcontainer1').innerHTML=imgcontent
+        document.getElementById('imgcontainer2').style.left=parseInt(document.getElementById('imgcontainer1').style.left)+i_loop	
+                document.getElementById('imgcontainer2').innerHTML=""
+            
+            }
+            changeimage()
+        }
+    }
+    
+    function changeimage() {
+        i_loop=0
+        i_image1++
+        if (i_image1>slideurl.length-1) {i_image1=0}
+        i_image2=i_image1-1
+        if (i_image2>slideurl.length-1) {i_image2=0}
+        if (i_image2<0) {i_image2=slideurl.length-1}
+        if (ie) {
+            document.all.imgcontainer2.style.posLeft=document.all.imgcontainer1.style.posLeft
+        }
+        if (ns6) {
+            document.getElementById('imgcontainer2').style.left=parseInt(document.getElementById('imgcontainer2').style.left)
+        }
+           var timer=setTimeout("stretchimage()",pause)
+    }
+    
+    
+    function simpleslideshow() {
+        i_slide++
+        if (i_slide>=slideurl.length) {i_slide=0}
+        document.slideimage.src=preloadedimages[i_slide].src
+        simpleslideshowcomment()
+        var fadetimer=setTimeout("simpleslideshow()",pause)
+    }
+    
+    function simpleslideshowcomment() {
+        if (i_space>=0){
+            all_space=""
+            content=""
+            for (i=0;i<i_space;i++) {
+                all_space+=" "
+            }
+            for (i=0;i<slidecomment[i_slide].length;i++) {
+                var thisletter=slidecomment[i_slide].substring(i,i+1)
+                thisletter=thisletter+all_space
+                content+=thisletter
+            }
+            window.status=content
+            i_space--
+            var fadetimer=setTimeout("simpleslideshowcomment()",20)
+        }
+        else {
+            clearTimeout(fadetimer)
+            i_space=max_space
+        }
+    }
+    
+    function simpleslideshowjump() {
+        if (slidetarget[i_slide]=="_self") {
+            document.location.href=slidelink[i_slide]
+        } 
+        else if (slidetarget[i_slide]=="_blank") {
+            codepopup=window.open(slidelink[i_slide], "code", "status=yes,location=yes,toolbar=yes,menubar=yes,resizable=yes,scrollbars=yes,width=780,height=580,top=10,left=10");
+        } 
+        else if (slidetarget[i_slide]=="_top") {
+            top.location.href=slidelink[i_slide]
+        } 
+        
+        else if (slidetarget[i_slide]=="_parent") {
+            parent.location.href=slidelink[i_slide]
+        } 
+        else {
+            var jumpto=eval("parent."+slidetarget[i_slide])
+            jumpto.location.href=slidelink[i_slide]
+        }
+    }
+    
+    if (ie || ns6) {
+        var slideh=slideheight+30
+        document.write("<div style=\"position:relative;width:"+slidewidth+"px;height:"+slideh+"px;overflow:hidden\">")
+        document.write("<div id=\"imgcontainer1\" style=\"position:absolute;width:"+slidewidth+"px;height:"+slideh+"px;top:0px;left:0px\"><img src=\""+slideurl[0]+"\"></div>")
+            document.write("<div id=\"imgcontainer2\" style=\"position:absolute;width:"+slidewidth+"px;height:"+slideh+"px;top:0px;left:0px\"><img src=\""+slideurl[1]+"\"></div>")
+        document.write("</div>")
+        window.onload=stretchimage
+    }
+    else {
+        document.write("<a href=\"javascript:simpleslideshowjump()\"><img name=\"slideimage\" src=\""+slideurl[0]+"\" border=0></a>")
+        window.onload=simpleslideshow
+    }
+    </script>
+      </td></tr></table></div><div>
+        <nav class="container">
+          <ul class="menu">
+            <li><a href="home.html" >  الصفحة الرئيسية</a></li>
+            <li><a href="النشأة و التأسيس .html">النشأة و التأسيس</a> 
+              <ul class="sub-menu">
+                <li><a href="المتحف المصري بالأزبكية.html" >المتحف المصري بالأزبكية
+                </a>  </li>
+                <li><a href="المتحف المصري بالقلعة.html" target="">المتحف المصري بالقلعة
+                </a></li>
+                <li><a href="المتحف المصري ببولاق (الأنتكخانة).html">المتحف المصري ببولاق (الأنتكخانة)
+                </a></li>
+                <li><a href="المتحف المصري بالجيزة.html">المتحف المصري بالجيزة
+                </a></li>
+                <li><a href="المتحف المصري الحالي.html">المتحف المصري الحالي
+                </a></li>
+                
+            </ul>
+            </li>
+      
+                
+                <li><a href="التصميم المعماري.html">التصميم المعماري</a>
+                    
+                </li>
+                  
+                <li><a href="تطوير المتحف.html"> تطوير المتحف</a>
+               
+                  <ul class="sub-menu">
+                    <li><a href="المرحلة الأولى.html" >  المرحلة الأولى 
+                    </a>  </li>
+                    <li><a href="المرحلة الثانية.html" target="">   المرحلة الثانية
+                    </a></li>
+                    <li><a href="المرحلة الثالثة.html"> المرحلة الثالثة
+                    </a>
+                    <li><a href="المرحلة الرابعة.html">المرحلة الرابعة
+                    </a></li>
+                    <li><a href="المرحلة الخامسة.html">  المرحلة الخامسة
+                    </a></li>
+                    
+                  </ul>                
+                </li>
+            
+              <li><a href="مكتبة المتحف.html"> مكتبة المتحف</a>
+               <ul class="sub-menu">
+                <li><a href="العصور التاريخية.html"> العصور التاريخية</a></li>
+                </ul>
+                                                        
+                        </li>
+                        <li><a href="موكب المومياوات الملكية.html"> موكب المومياوات الملكية</a>
+                          <ul class="sub-menu">
+                            <li><a href="  خط السير.html" >  خط السير
+                            </a>  </li>
+                            <li><a href="المومياوات المشاركة في الموكب.html" target="">  المومياوات المشاركة في الموكب
+                            </a></li>
+                            <li><a href=" كلمة رئيس الجمهورية.html "> كلمة رئيس الجمهورية
+                            </a>
+                            <li><a href="  كبار الزوار.html">كبار الزوار
+                            </a></li>
+                            <li><a href="  تاريخ المومياوات.html">تاريخ المومياوات 
+                            </a></li>
+                            
+                        </ul>
+      
+                                                 
+                  
+                        <li><a href="للتواصل.html">  للتواصل    </a>
+      
+  
+          </ul>  
+      
+            </nav>
+            </div>
+      <div class="titlediv1" id="elastic">      	المرحلة الخامسة
+        &nbsp;</div>
+      <tr>
+        <td>
+        </td>
+        <td colspan="4">
+          <div class="ltext" >
+            في نوفمبر 2018 افتتحت آخر أعمال تطوير المتحف
+             والتي تضمنت إعادة سيناريو العرض المتحفي، وعرض مقتنيات يويا وتويا في الدور العلوي،
+              بالإضافة لمقتنيات الملك توت عنخ آمون لحين نقل باقي مقتنياته إلى المتحف المصري الكبير، تضمنت الأعمال كذلك تغيير
+               دهانات الحوائط وتطوير المنافذ وشبكة الإضاءة وإعادة صيانة الفتارين، وتمت تلك الأعمال تحت إشراف
+               لجنة شارك فيها مديري أكبر المتاحف العالمية لوضع وجهة نظر علمية لإعادة توزيع القطع، بعد نقل الآثار 
+             المتعلقة بالمتحف المصري الكبير ومتحف الحضارة، وهم مديري متاحف تورينو واللوفر ويونايتد وبرلين.
+            </div>
+        </td>
+      </tr>
+     
+
+  
+  
+</body>
+</html>

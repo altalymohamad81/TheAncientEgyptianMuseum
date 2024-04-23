@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+
+
+<BODY bgColor='#FDF5E6' leftMargin=0 onload=textticker() rightmargin="20" topmargin="2" bottommargin="0" marginwidth="2" marginheight="2">
+<SCRIPT language=JavaScript>
+
+var max=0;
+function textlist()
+{
+max=textlist.arguments.length;
+for (i=0; i<max; i++)
+this[i]=textlist.arguments[i];
+}
+tl = new textlist
+(
+" المتحف المصرى يقع بالجهة الشمالية لميدان التحرير (القاهرة) يقع قلب العاصمة المصرية",
+"يعتبر المتحف من أوائل المتاحف  في العالم التي أسست لتكون متحفا عاما على عكس المتاحف التي سبقته",
+" تعرض المتحف للغرق بسبب الفيضان مما تسبب في إحداث تلف و أضرار بالغة للمتحف",
+"صمم المتحف على الطراز الكلاسيكي، ولم يمحو أي تأثيرات للفن المصري القديم و المعابد المصرية القديمة سوى تصميم قاعاته الداخلية",
+"يتكون المتحف من طابقين رئيسيين  يحتوي الطابق الأرضي على الآثار الثقيلة من توابيت و لوحات و تماثيل ضخمة  و كبيرة مصنوعة من حجر جيري و رملي",
+" يضم المتحف المصري  أكثر من  150 ألف قطعة أثرية أهمها المجموعات الأثرية التي تم العثور عليها في مقابر الملوك و الحاشية الملكية للأسرة الوسطى في دهشور عام 1894",
+"عصر التأسيس: تشمل على آثار الأسرتان الأولى و الثانية، مثل صلاية نعرمر و تمثال خع سخموي و العديد من الأواني و الأدوات",
+"مدخل المتحف محاط بعمودين من الأعمدة اليونانية مثل التي في معبد فيله",
+"يعلو المدخل تمثال نصفي للآلهة حتحور مصورة كأنثى بقرنين وبين القرنين قرص الشمس",
+"على جانبي المدخل تمثالين للآلهة إيزيس وهي ترتدى زي إغريقي وفى الجزء العلوي على اليمين وعلى اليسار كتبت الأعوام 1897 و1901 في إشارة لبدء العمل ونهايته",
+);
+var x=0; pos=0;
+var l=tl[0].length;
+function textticker()
+{
+
+tickform.innerHTML = tl[x].substring(0,pos);
+if(pos++==l) { pos=0; setTimeout("textticker()",2000); x++;
+if(x==max) x=0; l=tl[x].length; } else
+setTimeout("textticker()",60);
+}
+
+// -->
+</SCRIPT>
+<B>
+<STRONG>
+<DIV id=tickform style="COLOR: #A52A2A; FONT-FAMILY: Arial; FONT-SIZE: 22px">
+  <p align="center">&nbsp;</DIV></STRONG></B>
+
+</BODY></HTML>
